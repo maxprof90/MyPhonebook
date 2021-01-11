@@ -20,23 +20,27 @@
                 android:contentDescription="@null"
                 app:srcCompat="@drawable/add_contact_icon_11" />
 
-            <TextView
+            <EditText
                 android:id="@+id/firstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints="First name"
                 android:background="@color/design_default_color_on_primary"
+                android:hint="@string/firstName"
+                android:inputType="textPersonName"
                 android:padding="15dp"
-                android:text="@string/firstName"
                 android:textColor="@color/black" />
 
-            <TextView
+            <EditText
                 android:id="@+id/lastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:autofillHints="Last name"
                 android:background="@color/design_default_color_on_primary"
+                android:hint="@string/lastName"
+                android:inputType="textPersonName"
                 android:padding="15dp"
-                android:text="@string/lastName"
                 android:textColor="@color/black" />
 
             <EditText
@@ -48,8 +52,10 @@
                 android:ems="10"
                 android:inputType="phone"
                 android:padding="15dp"
-                android:text="@string/phone"
-                android:textColor="@color/grey" />
+                android:hint="@string/phone"
+                android:textColor="@color/design_default_color_on_primary"
+                android:autofillHints="phone number"
+                tools:ignore="LabelFor" />
 
             <Button
                 android:id="@+id/btnSaveContact"
