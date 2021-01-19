@@ -6,4 +6,5 @@
     <string name="lastName">Фамилия</string>
     <string name="btnSaveContact">Сохранить</string>
     <string name="phone">Номер телефона</string>
+    <string name="showName">showName</string>
 </resources>
