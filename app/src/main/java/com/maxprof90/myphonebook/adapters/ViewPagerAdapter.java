@@ -1,4 +1,4 @@
-package com.maxprof90.myphonebook.adapter;
+package com.maxprof90.myphonebook.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,7 +12,7 @@ import java.util.List;
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private final List<Fragment> fragmentList = new ArrayList<>();
-    private  final List<String> stringList = new ArrayList<>();
+    private final List<String> stringList = new ArrayList<>();
 
     public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
