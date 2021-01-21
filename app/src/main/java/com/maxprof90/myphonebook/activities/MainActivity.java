@@ -1,4 +1,4 @@
-package com.maxprof90.myphonebook;
+package com.maxprof90.myphonebook.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -9,7 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
-import com.maxprof90.myphonebook.adapter.ViewPagerAdapter;
+import com.maxprof90.myphonebook.R;
+import com.maxprof90.myphonebook.adapters.ViewPagerAdapter;
 import com.maxprof90.myphonebook.fragments.FragmentCall;
 import com.maxprof90.myphonebook.fragments.FragmentContact;
 import com.maxprof90.myphonebook.fragments.FragmentFavorite;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
+        Intent intent = new Intent(MainActivity.this, AddContactsActivity.class);
         startActivity(intent);
     }
 }

@@ -1,4 +1,4 @@
-package com.maxprof90.myphonebook;
+package com.maxprof90.myphonebook.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 
-public class ContactsActivity extends AppCompatActivity {
+import com.maxprof90.myphonebook.R;
+
+public class AddContactsActivity extends AppCompatActivity {
 
     EditText fName, lName, phone;
 
