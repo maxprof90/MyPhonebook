@@ -7,27 +7,23 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.maxprof90.myphonebook.managers.IContactManager;
 import com.maxprof90.myphonebook.R;
-import com.maxprof90.myphonebook.models.ContactData;
 
-import java.util.List;
-
-public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ContactViewHolder> {
+public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
 
     Context mContext;
-    List<ContactData> mData;
+    IContactManager mData;
     Dialog dialog;
 
-    public RecycleViewAdapter(Context mContext, List<ContactData> mData) {
+    public ContactAdapter(Context mContext, IContactManager mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -48,16 +44,16 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             @Override
             public void onClick(View v) {
 
-                TextView contactName_detail = dialog.findViewById(R.id.contactName_detail);
-                TextView contactPhone_detail = dialog.findViewById(R.id.contactPhone_detail);
-                ImageView contactAvatar_detail = dialog.findViewById(R.id.contactAvatar_detail);
+                TextView contactNameDetail = dialog.findViewById(R.id.contactName_detail);
+                TextView contactLastNameDetail = dialog.findViewById(R.id.contactLastName_detail);
+                TextView contactPhoneDetail = dialog.findViewById(R.id.contactPhone_detail);
+                ImageView contactAvatarDetail = dialog.findViewById(R.id.contactAvatar_detail);
 
-                contactName_detail.setText(mData.get(viewHolder.getAdapterPosition()).getName());
-                contactPhone_detail.setText(mData.get(viewHolder.getAdapterPosition()).getPhone());
-                contactAvatar_detail.setImageResource(mData.get(viewHolder.getAdapterPosition()).getAvatar());
+                contactNameDetail.setText(mData.get(viewHolder.getAdapterPosition()).getName());
+                contactLastNameDetail.setText(mData.get(viewHolder.getAdapterPosition()).getLastName());
+                contactPhoneDetail.setText(mData.get(viewHolder.getAdapterPosition()).getPhone());
+                contactAvatarDetail.setImageResource(mData.get(viewHolder.getAdapterPosition()).getAvatar());
 
-
-                Toast.makeText(mContext, "Detail contact " + String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
                 dialog.show();
 
             }
@@ -70,7 +66,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         holder.tv_name.setText(mData.get(position).getName());
-        holder.tv_phone.setText(mData.get(position).getPhone());
+        holder.tv_lastName.setText(mData.get(position).getLastName());
         holder.img_avatar.setImageResource(mData.get(position).getAvatar());
 
     }
@@ -82,17 +78,17 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     public static class ContactViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv_name;
-        private TextView tv_phone;
-        private ImageView img_avatar;
-        private LinearLayout item_contact;
+        private final TextView tv_name;
+        private final TextView tv_lastName;
+        private final ImageView img_avatar;
+        private final LinearLayout item_contact;
 
 
         public ContactViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_name = itemView.findViewById(R.id.showName_item);
-            tv_phone = itemView.findViewById(R.id.showPhone_item);
+            tv_name = itemView.findViewById(R.id.showFirstName_item);
+            tv_lastName = itemView.findViewById(R.id.showLastName_item);
             img_avatar = itemView.findViewById(R.id.image_contact_item);
             item_contact = itemView.findViewById(R.id.item_contact_id);
         }
