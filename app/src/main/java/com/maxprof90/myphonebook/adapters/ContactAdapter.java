@@ -7,27 +7,23 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.maxprof90.myphonebook.managers.IContactManager;
 import com.maxprof90.myphonebook.R;
-import com.maxprof90.myphonebook.models.ContactData;
 
-import java.util.List;
-
-public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ContactViewHolder> {
+public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
 
     Context mContext;
-    List<ContactData> mData;
+    IContactManager mData;
     Dialog dialog;
 
-    public RecycleViewAdapter(Context mContext, List<ContactData> mData) {
+    public ContactAdapter(Context mContext, IContactManager mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -56,8 +52,6 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                 contactPhone_detail.setText(mData.get(viewHolder.getAdapterPosition()).getPhone());
                 contactAvatar_detail.setImageResource(mData.get(viewHolder.getAdapterPosition()).getAvatar());
 
-
-                Toast.makeText(mContext, "Detail contact " + String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
                 dialog.show();
 
             }
