@@ -1,11 +1,7 @@
 <resources>
-    <string name="app_name">My Phonebook</string>
-    <string name="add_button">Add contact</string>
-    <string name="create_contact">Создать контакт</string>
+    <string name="app_name">Телефонная книга</string>
     <string name="firstName">Имя</string>
     <string name="lastName">Фамилия</string>
     <string name="btnSaveContact">Сохранить</string>
     <string name="phone">Номер телефона</string>
-    <string name="showName">showName</string>
-    <string name="showPhone">Show Phone</string>
 </resources>

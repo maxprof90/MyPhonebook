@@ -26,16 +26,17 @@ public class AddContactsActivity extends AppCompatActivity {
 
         btnAdd.setOnClickListener(v -> {
             String name = ((EditText) findViewById(R.id.firstName)).getText().toString();
+            String lastName = ((EditText) findViewById(R.id.lastName)).getText().toString();
             String phone = ((EditText) findViewById(R.id.editTextPhone)).getText().toString();
             String avatar = ((ImageView) findViewById(R.id.imageView)).getDrawable().toString();
 
-            if (name.isEmpty() || phone.isEmpty()) {
+            if (name.isEmpty() || phone.isEmpty() || lastName.isEmpty()) {
                 Toast.makeText(AddContactsActivity.this, "Нужно заполнить поля", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             try {
-                ContactManager.getInstance().add(new ContactData(name, phone));
+                ContactManager.getInstance().add(new ContactData(name, lastName, phone));
             } catch (Exception e) {
                 e.printStackTrace();
                 Toast.makeText(AddContactsActivity.this, "Ошибка", Toast.LENGTH_SHORT).show();

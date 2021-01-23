@@ -44,13 +44,15 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             @Override
             public void onClick(View v) {
 
-                TextView contactName_detail = dialog.findViewById(R.id.contactName_detail);
-                TextView contactPhone_detail = dialog.findViewById(R.id.contactPhone_detail);
-                ImageView contactAvatar_detail = dialog.findViewById(R.id.contactAvatar_detail);
+                TextView contactNameDetail = dialog.findViewById(R.id.contactName_detail);
+                TextView contactLastNameDetail = dialog.findViewById(R.id.contactLastName_detail);
+                TextView contactPhoneDetail = dialog.findViewById(R.id.contactPhone_detail);
+                ImageView contactAvatarDetail = dialog.findViewById(R.id.contactAvatar_detail);
 
-                contactName_detail.setText(mData.get(viewHolder.getAdapterPosition()).getName());
-                contactPhone_detail.setText(mData.get(viewHolder.getAdapterPosition()).getPhone());
-                contactAvatar_detail.setImageResource(mData.get(viewHolder.getAdapterPosition()).getAvatar());
+                contactNameDetail.setText(mData.get(viewHolder.getAdapterPosition()).getName());
+                contactLastNameDetail.setText(mData.get(viewHolder.getAdapterPosition()).getLastName());
+                contactPhoneDetail.setText(mData.get(viewHolder.getAdapterPosition()).getPhone());
+                contactAvatarDetail.setImageResource(mData.get(viewHolder.getAdapterPosition()).getAvatar());
 
                 dialog.show();
 
@@ -64,7 +66,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         holder.tv_name.setText(mData.get(position).getName());
-        holder.tv_phone.setText(mData.get(position).getPhone());
+        holder.tv_lastName.setText(mData.get(position).getLastName());
         holder.img_avatar.setImageResource(mData.get(position).getAvatar());
 
     }
@@ -76,17 +78,17 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
     public static class ContactViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv_name;
-        private TextView tv_phone;
-        private ImageView img_avatar;
-        private LinearLayout item_contact;
+        private final TextView tv_name;
+        private final TextView tv_lastName;
+        private final ImageView img_avatar;
+        private final LinearLayout item_contact;
 
 
         public ContactViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_name = itemView.findViewById(R.id.showName_item);
-            tv_phone = itemView.findViewById(R.id.showPhone_item);
+            tv_name = itemView.findViewById(R.id.showFirstName_item);
+            tv_lastName = itemView.findViewById(R.id.showLastName_item);
             img_avatar = itemView.findViewById(R.id.image_contact_item);
             item_contact = itemView.findViewById(R.id.item_contact_id);
         }
