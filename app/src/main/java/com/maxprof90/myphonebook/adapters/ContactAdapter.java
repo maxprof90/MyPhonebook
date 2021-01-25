@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +65,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         holder.tv_name.setText(mData.get(position).getName());
         holder.tv_lastName.setText(mData.get(position).getLastName());
         holder.img_avatar.setImageResource(R.drawable.avatar);
-
     }
 
     @Override
