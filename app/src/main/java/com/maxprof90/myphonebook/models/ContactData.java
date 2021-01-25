@@ -7,19 +7,10 @@ public class ContactData {
     private String phone;
     private int avatar;
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public ContactData(String name, String lastName, String phone) {
         this.name = name;
         this.lastName = lastName;
         this.phone = phone;
-//      this.avatar = avatar;
     }
 
     public String getName() {
@@ -28,6 +19,14 @@ public class ContactData {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPhone() {
@@ -41,7 +40,6 @@ public class ContactData {
     public int getAvatar() {
         return avatar;
     }
-
     public void setAvatar(int avatar) {
         this.avatar = avatar;
     }

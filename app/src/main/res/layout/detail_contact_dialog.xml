@@ -59,18 +59,18 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        app:cardCornerRadius="150dp"
-        android:elevation="10dp">
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp">
 
 
         <ImageView
-
             android:layout_width="102dp"
             android:layout_height="118dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             android:src="@drawable/avatar"
-            android:id="@+id/contactAvatar_detail"/>
+            android:id="@+id/contactAvatar_detail"
+            android:contentDescription="@null" />
 </androidx.cardview.widget.CardView>
-
-
 
 </RelativeLayout>
